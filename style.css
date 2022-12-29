@@ -1,0 +1,93 @@
+.card-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  color: #686d7a;
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e5a654;
+  background-image: url("../images/search.svg");
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: 40% 40%;
+}
+
+.btn-icon:hover {
+  background-color: #f5ce42;
+}
+
+.city-header {
+  padding: 40px 0 30px 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ced4da;
+}
+
+.city-name {
+  color: #686d7a;
+}
+
+.current-weather {
+  padding: 30px 0 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.current-weather img {
+  width: 100%;
+  min-width: 100px;
+}
+
+.current-weather ul {
+  list-style: none;
+}
+
+.current-weather li {
+  margin-left: -30px;
+}
+
+.current-temp {
+  text-align: center;
+  margin-top: -20px;
+}
+
+.temp {
+  color: #e5a654;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.units {
+  margin-top: -15px;
+}
+
+.units a {
+  color: #83b3cb;
+  text-decoration: none;
+}
+
+.units a:hover {
+  color: #e5a654;
+}
+
+.day-temp {
+  color: #e5a654;
+}
+
+.night-temp {
+  color: #83b3cb;
+}
+
+.current-location {
+  height: 40px;
+  width: fit-content;
+  margin: 20px auto;
+  background: none;
+  border: 2px solid #83b3cb;
+  color: #83b3cb;
+  border-radius: 4px;
+}
