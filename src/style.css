@@ -1,4 +1,5 @@
-.card-container {
+.app-container {
+  width: 90%;
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
