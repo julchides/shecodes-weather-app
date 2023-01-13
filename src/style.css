@@ -1,4 +1,5 @@
 /* Variables */
+
 :root {
   /* colors */
   --accent-main: #e5a654;
@@ -142,6 +143,7 @@ body {
 
 .city-name {
   font-size: 2.125rem;
+  line-height: 1em;
 }
 
 /* Current weather */
@@ -184,7 +186,6 @@ body {
 .current-weather-description {
   min-width: 200px;
   font-size: 0.875rem;
-  padding-top: 0.5rem;
   line-height: 1.5em;
 }
 
