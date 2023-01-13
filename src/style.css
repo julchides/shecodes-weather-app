@@ -9,6 +9,8 @@
   --back-body: #598094;
   --back-app: #ffffff;
   --shadow: rgba(0, 0, 0, 0.1);
+  /* transition */
+  --default-trans: all 500ms ease;
 }
 
 /* General styles */
@@ -53,23 +55,64 @@ body {
   padding: 20px;
   color: var(--text-main);
   background: var(--back-app);
-  border-radius: 4px;
+  border-radius: 0.25rem;
   box-shadow: 0px 10px 20px var(--shadow);
 }
 
-.btn-icon {
+.search-container,
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.search-form,
+.search-field {
+  flex: auto;
+}
+
+.search-field {
+  padding: 0.5rem 1rem 0.4rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+}
+
+.search-button {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   background-color: var(--accent-main);
-  background-image: url("./images/search.svg");
+  background-image: url("../images/search.svg");
   background-size: 70%;
   background-repeat: no-repeat;
   background-position: 40% 40%;
+  transition: var(--default-trans);
+  cursor: pointer;
 }
 
-.btn-icon:hover {
+.search-button:hover,
+.search-button:focus {
   background-color: var(--accent-hover);
+}
+
+.current-location-button {
+  width: fit-content;
+  padding: 0.5rem 1rem 0.4rem 1rem;
+  font-size: 1rem;
+  background: none;
+  border: 2px solid var(--accent-secondary);
+  color: var(--accent-secondary);
+  border-radius: 4px;
+  transition: var(--default-trans);
+  cursor: pointer;
+}
+
+.current-location-button:hover,
+.current-location-button:focus {
+  color: var(--accent-hover);
+  border: 2px solid var(--accent-hover);
 }
 
 .city-header {
@@ -134,16 +177,6 @@ body {
   color: var(--accent-secondary);
 }
 
-.current-location {
-  height: 40px;
-  width: fit-content;
-  margin: 20px auto;
-  background: none;
-  border: 2px solid var(--accent-secondary);
-  color: var(--accent-secondary);
-  border-radius: 4px;
-}
-
 .github-link {
   text-align: center;
 }
@@ -151,7 +184,7 @@ body {
 .github-link a {
   color: var(--accent-main);
   text-decoration: none;
-  transition: all 500ms ease;
+  transition: var(--default-trans);
 }
 
 .github-link a:hover,

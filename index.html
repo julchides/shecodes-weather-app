@@ -10,20 +10,20 @@
   </head>
   <body>
     <div class="app-container">
-      <form id="search-form">
-        <input
-          type="search"
-          class="form-control"
-          id="user-city"
-          placeholder="Enter city name"
-        />
-
-        <button type="submit" class="btn btn-icon"></button>
-      </form>
-
-      <button class="current-location" id="current-location">
-        Show weather in your current location
-      </button>
+      <div class="search-container">
+        <form class="search-form" id="search-form">
+          <input
+            type="search"
+            class="search-field"
+            id="user-city"
+            placeholder="Enter city name"
+          />
+          <button type="submit" class="search-button"></button>
+        </form>
+        <button class="current-location-button" id="current-location">
+          Current location
+        </button>
+      </div>
 
       <div class="city-header">
         <h1 class="city-name" id="city-name"></h1>
