@@ -99,7 +99,7 @@ body {
   background-image: url("../images/search.svg");
   background-size: 70%;
   background-repeat: no-repeat;
-  background-position: 40% 40%;
+  background-position: center center;
   transition: var(--default-trans);
   cursor: pointer;
 }

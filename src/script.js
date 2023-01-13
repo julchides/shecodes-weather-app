@@ -56,6 +56,7 @@ function showWeather(response) {
   )}º`;
 
   // Change weather description
+
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
   document.querySelector(
@@ -64,6 +65,31 @@ function showWeather(response) {
   document.querySelector("#wind").innerHTML = `${Math.round(
     response.data.wind.speed
   )} km/h`;
+
+  // Change weather icon
+  let iconName = response.data.weather[0].main.replace(/ /i, "-").toLowerCase();
+
+  let mistNames = [
+    "mist",
+    "smoke",
+    "haze",
+    "dust",
+    "fog",
+    "sand",
+    "ash",
+    "squall",
+    "tornado",
+  ];
+  if (mistNames.includes(iconName)) {
+    iconName = "mist";
+  }
+
+  document
+    .querySelector("#current-weather-icon")
+    .setAttribute("src", `./images/${iconName}.svg`);
+  document
+    .querySelector("#ccurrent-weather-icon")
+    .setAttribute("alt", response.data.weather[0].description);
 }
 
 function showUserCity(userCity) {
