@@ -1,3 +1,5 @@
+let apiKey = "54fb77f49c427e0baa9e8baf21cebec9";
+
 // Set current date and time
 
 function showTime(timestamp) {
@@ -87,7 +89,6 @@ function showWeather(response) {
 }
 
 function showUserCity(userCity) {
-  let apiKey = "54fb77f49c427e0baa9e8baf21cebec9";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${userCity}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
