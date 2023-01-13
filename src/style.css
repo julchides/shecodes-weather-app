@@ -5,6 +5,7 @@
   --accent-hover: #f5ce42;
   --accent-secondary: #83b3cb;
   --text-main: #686d7a;
+  --text-light: #bfc6ce;
   --border: #ced4da;
   --back-body: #598094;
   --back-app: #ffffff;
@@ -57,6 +58,14 @@ body {
   background: var(--back-app);
   border-radius: 0.25rem;
   box-shadow: 0px 10px 20px var(--shadow);
+}
+
+.block-container {
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
 }
 
 /* Search */
@@ -119,18 +128,11 @@ body {
 
 /* City header */
 
-.city-header {
-  padding: 40px 0 30px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--border);
-}
-
 .date {
   min-width: 200px;
   font-size: 0.875rem;
   line-height: 1.25em;
+  color: var(--text-light);
 }
 
 .date li:first-child,
@@ -140,62 +142,60 @@ body {
 
 .city-name {
   font-size: 2.125rem;
-  font-weight: 400;
 }
 
-.current-weather {
-  padding: 30px 0 20px 0;
-  display: flex;
-  align-items: center;
-}
+/* Current weather */
 
-.current-weather img {
+.current-weather-icon {
   width: 100%;
-  min-width: 100px;
-}
-
-.current-weather ul {
-  list-style: none;
-}
-
-.current-weather li {
-  margin-left: -30px;
+  max-width: 100px;
+  margin: auto 0;
 }
 
 .current-temp {
-  text-align: center;
-  margin-top: -20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
-.temp {
-  color: var(--accent-main);
-  font-size: 3rem;
+.current-temp-value {
+  font-size: 4.5rem;
+  line-height: 1em;
   font-weight: 700;
-}
-
-.units {
-  margin-top: -15px;
+  color: var(--accent-main);
 }
 
 .units a {
+  line-height: 2em;
   color: var(--accent-secondary);
   text-decoration: none;
 }
 
 .units a:hover {
-  color: var(--accent-main);
+  color: var(--accent-hover);
 }
 
-.day-temp {
-  color: var(--accent-main);
+.units a.active {
+  color: var(--text-main);
+  text-decoration: none;
+  cursor: default;
 }
 
-.night-temp {
-  color: var(--accent-secondary);
+.current-weather-description {
+  min-width: 200px;
+  font-size: 0.875rem;
+  padding-top: 0.5rem;
+  line-height: 1.5em;
 }
+
+/* Forecast */
+
+/* Github */
 
 .github-link {
+  padding-top: 2rem;
   text-align: center;
+  font-size: 0.875rem;
 }
 
 .github-link a {

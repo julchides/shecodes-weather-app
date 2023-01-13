@@ -25,7 +25,7 @@
         </button>
       </div>
 
-      <div class="city-header">
+      <div class="block-container">
         <h1 class="city-name" id="city-name"></h1>
         <ul class="date">
           <li id="current-day"></li>
@@ -33,32 +33,31 @@
           <li id="current-time"></li>
         </ul>
       </div>
-      <div class="current-weather">
-        <img src="images/cloud.svg" alt="Cloudy" />
-
-        <p>
-          <span class="temp" id="temp"></span> <br />
-          <span class="units">
-            <a href="#" id="celsius-link">°C</a>
+      <div class="block-container">
+        <img class="current-weather-icon" src="images/cloud.svg" alt="Cloudy" />
+        <div class="current-temp">
+          <p class="current-temp-value" id="temp"></p>
+          <p class="units">
+            <a class="active" href="#" id="celsius-link">°C</a>
             |
             <a href="#" id="fahrenheit-link">°F</a>
-          </span>
-        </p>
-
-        <ul>
+          </p>
+        </div>
+        <ul class="current-weather-description">
           <li>Sky: <strong id="description"></strong></li>
           <li>Humidity: <strong id="humidity"></strong></li>
           <li>Wind: <strong id="wind"></strong></li>
         </ul>
       </div>
-
+      <div class="block-container">There will be the forecast.</div>
       <div class="github-link">
         <a
           href="https://github.com/julchides/shecodes-weather-app"
           target="_blank"
           rel="noopener noreferrer"
-          >Weather App by Yuliia Sobolieva at GitHub</a
+          >Open source</a
         >
+        by Yuliia Sobolieva
       </div>
     </div>
 
