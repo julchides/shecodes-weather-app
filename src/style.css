@@ -1,16 +1,67 @@
+/* Variables */
+:root {
+  /* colors */
+  --accent-main: #e5a654;
+  --accent-hover: #f5ce42;
+  --accent-secondary: #83b3cb;
+  --text-main: #686d7a;
+  --border: #ced4da;
+  --back-body: #598094;
+  --back-app: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* General styles */
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+ul li {
+  list-style: none;
+}
+
+img,
+button {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1em;
+  font-weight: 400;
+  background: var(--back-body);
+  scroll-behavior: smooth;
+}
+
+/* Class styles */
+
 .app-container {
   width: 90%;
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
-  color: #686d7a;
+  color: var(--text-main);
+  background: var(--back-app);
+  border-radius: 4px;
+  box-shadow: 0px 10px 20px var(--shadow);
 }
 
 .btn-icon {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #e5a654;
+  background-color: var(--accent-main);
   background-image: url("./images/search.svg");
   background-size: 70%;
   background-repeat: no-repeat;
@@ -18,18 +69,18 @@
 }
 
 .btn-icon:hover {
-  background-color: #f5ce42;
+  background-color: var(--accent-hover);
 }
 
 .city-header {
   padding: 40px 0 30px 0;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #ced4da;
+  border-bottom: 1px solid var(--border);
 }
 
 .city-name {
-  color: #686d7a;
+  color: var(--text-main);
 }
 
 .current-weather {
@@ -57,7 +108,7 @@
 }
 
 .temp {
-  color: #e5a654;
+  color: var(--accent-main);
   font-size: 3rem;
   font-weight: 700;
 }
@@ -67,20 +118,20 @@
 }
 
 .units a {
-  color: #83b3cb;
+  color: var(--accent-secondary);
   text-decoration: none;
 }
 
 .units a:hover {
-  color: #e5a654;
+  color: var(--accent-main);
 }
 
 .day-temp {
-  color: #e5a654;
+  color: var(--accent-main);
 }
 
 .night-temp {
-  color: #83b3cb;
+  color: var(--accent-secondary);
 }
 
 .current-location {
@@ -88,8 +139,8 @@
   width: fit-content;
   margin: 20px auto;
   background: none;
-  border: 2px solid #83b3cb;
-  color: #83b3cb;
+  border: 2px solid var(--accent-secondary);
+  color: var(--accent-secondary);
   border-radius: 4px;
 }
 
@@ -98,13 +149,13 @@
 }
 
 .github-link a {
-  color: #e5a654;
+  color: var(--accent-main);
   text-decoration: none;
   transition: all 500ms ease;
 }
 
 .github-link a:hover,
 .github-link a:focus {
-  color: #f5ce42;
+  color: var(--accent-hover);
   text-decoration: underline;
 }
