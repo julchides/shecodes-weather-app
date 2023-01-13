@@ -1,72 +1,70 @@
 // Set current date and time
 
-let now = new Date();
+function showTime(timestamp) {
+  let now = new Date(timestamp);
 
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 
-let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
 
-let minutes = now.getMinutes();
-let currentDay = document.querySelector("#current-day");
-let currentDate = document.querySelector("#current-date");
-let currentTime = document.querySelector("#current-time");
+  let minutes = now.getMinutes();
+  let currentDay = document.querySelector("#current-day");
+  let currentDate = document.querySelector("#current-date");
+  let currentTime = document.querySelector("#current-time");
 
-minutes = minutes < 10 ? "0" + minutes : minutes;
-currentDay.innerHTML = `${days[now.getDay()]}`;
-currentDate.innerHTML = `${
-  months[now.getMonth()]
-} ${now.getDate()}, ${now.getFullYear()}`;
-currentTime.innerHTML = `${now.getHours()}:${minutes}`;
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  currentDay.innerHTML = `${days[now.getDay()]}`;
+  currentDate.innerHTML = `${
+    months[now.getMonth()]
+  } ${now.getDate()}, ${now.getFullYear()}`;
+  currentTime.innerHTML = `${now.getHours()}:${minutes}`;
+}
 
-// Weather API
-
-let apiKey = "54fb77f49c427e0baa9e8baf21cebec9";
-let celsiusTemperature = null;
+// Weather
 
 function showWeather(response) {
-  console.log(response);
-  // Change city name
-  document.querySelector("#city-name").innerHTML = response.data.name;
+  // Change time
+  showTime(response.data.dt * 1000);
 
-  // Change temperature
+  // Change city weather
+
+  let cityName = document.querySelector("#city-name");
+  let currentTemp = document.querySelector("#current-temp-value");
+  let currentDescription = document.querySelector("#current-description");
+  let currentHumidity = document.querySelector("#current-humidity");
+  let currentWind = document.querySelector("#current-wind");
+
   celsiusTemp = response.data.main.temp;
-  document.querySelector("#current-temp-value").innerHTML = `${Math.round(
-    celsiusTemp
-  )}º`;
 
-  // Change weather description
-
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].description;
-  document.querySelector(
-    "#humidity"
-  ).innerHTML = `${response.data.main.humidity}%`;
-  document.querySelector("#wind").innerHTML = `${Math.round(
-    response.data.wind.speed
-  )} km/h`;
+  cityName.innerHTML = response.data.name;
+  currentTemp.innerHTML = `${Math.round(celsiusTemp)}º`;
+  currentDescription.innerHTML = response.data.weather[0].description;
+  currentHumidity.innerHTML = `${response.data.main.humidity}%`;
+  currentWind.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
 
   // Change weather icon
+  let iconImg = document.querySelector("#current-weather-icon");
   let iconName = response.data.weather[0].main.replace(/ /i, "-").toLowerCase();
 
   let mistNames = [
@@ -84,15 +82,12 @@ function showWeather(response) {
     iconName = "mist";
   }
 
-  document
-    .querySelector("#current-weather-icon")
-    .setAttribute("src", `./images/${iconName}.svg`);
-  document
-    .querySelector("#ccurrent-weather-icon")
-    .setAttribute("alt", response.data.weather[0].description);
+  iconImg.setAttribute("src", `./images/${iconName}.svg`);
+  iconImg.setAttribute("alt", currentDescription);
 }
 
 function showUserCity(userCity) {
+  let apiKey = "54fb77f49c427e0baa9e8baf21cebec9";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${userCity}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
@@ -119,6 +114,8 @@ function showCelsiusTemp(event) {
   document.querySelector("#current-temp-value").innerHTML =
     Math.round(celsiusTemp);
 }
+
+let celsiusTemperature = null;
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchUserCity);

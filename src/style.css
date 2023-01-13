@@ -136,8 +136,7 @@ body {
   color: var(--text-light);
 }
 
-.date li:first-child,
-.date li:last-child {
+.date li:first-child {
   font-weight: 700;
 }
 
