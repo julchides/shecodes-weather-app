@@ -126,7 +126,7 @@ function getForecast(coordinates) {
 // Weather
 
 function showWeather(response) {
-  // Change time
+  // Change time, icon, forecast
   showTime(response.data.dt);
   showIcon("#current-weather-icon", response.data.weather[0]);
   getForecast(response.data.coord);
