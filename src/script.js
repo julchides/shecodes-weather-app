@@ -139,14 +139,14 @@ function showWeather(response) {
   let currentHumidity = document.querySelector("#current-humidity");
   let currentWind = document.querySelector("#current-wind");
 
-  celsiusTemp = response.data.main.temp;
-
   cityName.innerHTML = response.data.name;
-  currentTemp.innerHTML = `${Math.round(celsiusTemp)}º`;
+  currentTemp.innerHTML = `${Math.round(response.data.main.temp)}º`;
   currentDescription.innerHTML = response.data.weather[0].description;
   currentHumidity.innerHTML = `${response.data.main.humidity}%`;
   currentWind.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
 }
+
+// City search
 
 function showUserCity(userCity) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${userCity}&appid=${apiKey}&units=metric`;
@@ -158,8 +158,6 @@ function searchUserCity(event) {
   let userCity = document.querySelector("#user-city").value;
   showUserCity(userCity);
 }
-
-let celsiusTemperature = null;
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchUserCity);
@@ -179,6 +177,6 @@ function getUserLocation(event) {
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getUserLocation);
 
-// Default city
+// Default city is current location
 
-showUserCity("Mykolaiv");
+navigator.geolocation.getCurrentPosition(showUserLocation);
