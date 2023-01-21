@@ -16,18 +16,18 @@ function showTime(timestamp) {
   ];
 
   let months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
+    "January",
+    "February",
+    "March",
+    "April",
     "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
 
   let minutes = now.getMinutes();
@@ -37,9 +37,9 @@ function showTime(timestamp) {
 
   minutes = minutes < 10 ? "0" + minutes : minutes;
   currentDay.innerHTML = `${days[now.getDay()]}`;
-  currentDate.innerHTML = `${
+  currentDate.innerHTML = `${now.getDate()} ${
     months[now.getMonth()]
-  } ${now.getDate()}, ${now.getFullYear()}`;
+  } ${now.getFullYear()}`;
   currentTime.innerHTML = `${now.getHours()}:${minutes}`;
 }
 

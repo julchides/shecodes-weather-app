@@ -63,14 +63,6 @@ body {
   box-shadow: 0px 10px 20px var(--shadow);
 }
 
-.city-container,
-.current-weather-container {
-  padding: 2rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 /* Search */
 
 .search-container,
@@ -130,26 +122,32 @@ body {
 /* City header */
 
 .city-container {
+  padding: 1rem 0;
   border-bottom: 1px solid var(--border);
-}
-
-.date {
-  min-width: 200px;
-  font-size: 0.875rem;
-  line-height: 1.25em;
-  color: var(--text-light);
-}
-
-.date li:first-child {
-  font-weight: 700;
 }
 
 .city-name {
   font-size: 2.125rem;
-  line-height: 1em;
+  line-height: 1.5em;
+}
+
+.date {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.date-title {
+  font-weight: 700;
 }
 
 /* Current weather */
+
+.current-weather-container {
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .current-weather-icon {
   width: 100%;
