@@ -270,12 +270,22 @@ body {
     justify-content: center;
   }
 
+  .search-container,
+  .search-form {
+    gap: 0.5rem;
+  }
+
   .current-location-button {
     width: 100%;
   }
 
   .city-container {
     text-align: center;
+  }
+
+  .date {
+    margin: 0 auto;
+    max-width: 150px;
   }
 
   .current-weather-container {
@@ -288,5 +298,11 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .search-field {
+    max-width: calc(150px + (220 - 150) * ((100vw - 240px)) / (320 - 240));
   }
 }
