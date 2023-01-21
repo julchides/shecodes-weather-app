@@ -13,6 +13,8 @@
   --shadow: rgba(0, 0, 0, 0.1);
   /* transition */
   --default-trans: all 500ms ease;
+  /* border radius */
+  --default-radius: 0.25rem;
 }
 
 /* General styles */
@@ -57,16 +59,16 @@ body {
   padding: 2rem;
   color: var(--text-main);
   background: var(--back-app);
-  border-radius: 0.25rem;
+  border-radius: var(--default-radius);
   box-shadow: 0px 10px 20px var(--shadow);
 }
 
-.block-container {
+.city-container,
+.current-weather-container {
   padding: 2rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid var(--border);
 }
 
 /* Search */
@@ -88,7 +90,7 @@ body {
   padding: 0.5rem 1rem 0.4rem 1rem;
   font-size: 1rem;
   border: 1px solid var(--border);
-  border-radius: 0.25rem;
+  border-radius: var(--default-radius);
 }
 
 .search-button {
@@ -115,7 +117,7 @@ body {
   background: none;
   border: 2px solid var(--accent-secondary);
   color: var(--accent-secondary);
-  border-radius: 4px;
+  border-radius: var(--default-radius);
   transition: var(--default-trans);
   cursor: pointer;
 }
@@ -126,6 +128,10 @@ body {
 }
 
 /* City header */
+
+.city-container {
+  border-bottom: 1px solid var(--border);
+}
 
 .date {
   min-width: 200px;
@@ -190,6 +196,50 @@ body {
   text-transform: uppercase;
 }
 /* Forecast */
+
+.forecast {
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: var(--default-radius);
+}
+
+.forecast-list {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+.forecast-list-item {
+  padding: 0 2rem;
+  border-right: 1px solid var(--border);
+}
+
+.forecast-list-item:last-child {
+  border: none;
+}
+
+.forecast-list-icon {
+  width: 100%;
+  max-width: 50px;
+  margin: auto 0;
+}
+
+.forecast-day {
+  margin: 0.5rem 0;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.forecast-temp-max {
+  color: var(--accent-main);
+}
+
+.forecast-temp-min {
+  color: var(--accent-secondary);
+}
 
 /* Github */
 
