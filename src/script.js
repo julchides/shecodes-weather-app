@@ -141,7 +141,9 @@ function showWeather(response) {
 
   cityName.innerHTML = response.data.name;
   currentTemp.innerHTML = `${Math.round(response.data.main.temp)}º`;
-  currentDescription.innerHTML = response.data.weather[0].description;
+  currentDescription.innerHTML =
+    response.data.weather[0].description.charAt(0).toUpperCase() +
+    response.data.weather[0].description.slice(1);
   currentHumidity.innerHTML = `${response.data.main.humidity}%`;
   currentWind.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
 }

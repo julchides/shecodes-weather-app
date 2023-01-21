@@ -184,9 +184,6 @@ body {
   line-height: 1.5em;
 }
 
-.current-weather-description li:first-child::first-letter {
-  text-transform: uppercase;
-}
 /* Forecast */
 
 .forecast {
