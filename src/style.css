@@ -296,6 +296,11 @@ body {
     flex-wrap: wrap;
     gap: 0.5rem;
   }
+
+  .current-weather-description li:first-child {
+    min-width: 100%;
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 320px) {
