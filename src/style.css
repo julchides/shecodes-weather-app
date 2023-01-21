@@ -155,12 +155,6 @@ body {
   margin: auto 0;
 }
 
-.current-temp {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-}
-
 .current-temp-value {
   font-size: 4.5rem;
   line-height: 1em;
