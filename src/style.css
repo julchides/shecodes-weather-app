@@ -144,7 +144,7 @@ body {
 /* Current weather */
 
 .current-weather-container {
-  padding: 2rem 0;
+  /* padding: 1rem 0; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -152,7 +152,7 @@ body {
 
 .current-weather-icon {
   width: 100%;
-  max-width: 100px;
+  max-width: 150px;
   margin: auto 0;
 }
 
@@ -180,7 +180,7 @@ body {
 }
 
 .current-weather-description {
-  min-width: 200px;
+  min-width: 150px;
   font-size: 0.875rem;
   line-height: 1.5em;
 }
